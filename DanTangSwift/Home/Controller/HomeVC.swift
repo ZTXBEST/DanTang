@@ -8,16 +8,20 @@
 
 import UIKit
 
-class HomeVC: TXBaseViewController {
+class HomeVC: TXBaseViewController,UIScrollViewDelegate {
     var channels = [TXHomeTopModel]()
     //选中的标签
-    var selectButton = UIButton()
+    weak var selectButton = UIButton()
     //底部红色指示器
     weak var indicatorView = UIView()
+    //主页scrollview
+    weak var contentView = UIScrollView()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initNav()
+        initScrollView()
         requestData()
         // Do any additional setup after loading the view.
     }
@@ -25,6 +29,18 @@ class HomeVC: TXBaseViewController {
     private func initNav() {
         navigationItem.rightBarButtonItem=UIBarButtonItem(image: UIImage(named:"Feed_SearchBtn_18x18_"), style: .plain, target: self, action: #selector(rightButtonClick))
         navigationItem.rightBarButtonItem?.tintColor=UIColor.white
+    }
+    
+    //主页的scrollView
+    private func initScrollView() {
+        let contentView = UIScrollView()
+        automaticallyAdjustsScrollViewInsets = false
+        contentView.frame = view.bounds
+        contentView.contentSize = CGSize(width: contentView.width*CGFloat(channels.count), height: contentView.height)
+        contentView.delegate = self
+        contentView.isPagingEnabled = true
+        view.insertSubview(contentView, at: 0)
+        
     }
     
     private func requestData() {
@@ -93,12 +109,12 @@ class HomeVC: TXBaseViewController {
     }
 
     func titlesClick(button:UIButton) {
-        selectButton.isEnabled = true
+        selectButton?.isEnabled = true
         button.isEnabled = false
         selectButton = button
         UIView.animate(withDuration: 0.25) {
-            self.indicatorView?.width = self.selectButton.width
-            self.indicatorView?.centerX = self.selectButton.centerX
+            self.indicatorView?.width = (self.selectButton?.width)!
+            self.indicatorView?.centerX = (self.selectButton?.centerX)!
         }
     }
     
