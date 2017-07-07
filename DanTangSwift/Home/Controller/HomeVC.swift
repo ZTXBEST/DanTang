@@ -16,16 +16,16 @@ class HomeVC: TXBaseViewController,UIScrollViewDelegate {
     weak var indicatorView = UIView()
     //主页scrollview
     weak var contentView = UIScrollView()
-    
+    weak var titlesView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "单糖"
         initNav()
-        initScrollView()
         requestData()
         // Do any additional setup after loading the view.
     }
-    
+//    MARK:- init方法
     private func initNav() {
         navigationItem.rightBarButtonItem=UIBarButtonItem(image: UIImage(named:"Feed_SearchBtn_18x18_"), style: .plain, target: self, action: #selector(rightButtonClick))
         navigationItem.rightBarButtonItem?.tintColor=UIColor.white
@@ -40,14 +40,22 @@ class HomeVC: TXBaseViewController,UIScrollViewDelegate {
         contentView.delegate = self
         contentView.isPagingEnabled = true
         view.insertSubview(contentView, at: 0)
-        
+        self.contentView = contentView
+        scrollViewDidEndScrollingAnimation(contentView)
     }
     
     private func requestData() {
         weak var weakSelf = self
         NetworkTool.shared.loadHomeTopData { (datas) in
             weakSelf?.channels = datas
+            for channel in datas {
+                let vc = HomeContentVC()
+                vc.title = channel.name
+                vc.type = channel.id!
+                weakSelf!.addChildViewController(vc)
+            }
             weakSelf?.initTitlesView()
+            weakSelf?.initScrollView()
         }
     }
     
@@ -63,10 +71,12 @@ class HomeVC: TXBaseViewController,UIScrollViewDelegate {
         titlesView.frame=CGRect(x: 0, y: 0, width:KScreenWidth-kTitlesViewH, height: kTitlesViewH)
         titlesView.backgroundColor=TXGlobalColor()
         bgView.addSubview(titlesView)
+        self.titlesView = titlesView
         
         //右侧箭头
         let arrowBtn = UIButton()
         arrowBtn.frame=CGRect(x: KScreenWidth-kTitlesViewH, y: 0, width: kTitlesViewH, height: kTitlesViewH)
+        arrowBtn.backgroundColor=TXGlobalColor()
         arrowBtn.setImage(UIImage(named: "arrow_index_down_8x4_"), for: .normal)
         arrowBtn.setImage(UIImage(named: "arrow_index_up_8x4_"), for: .selected)
         arrowBtn.addTarget(self, action: #selector(arrowBtnClick(sender:)), for: .touchUpInside)
@@ -107,7 +117,7 @@ class HomeVC: TXBaseViewController,UIScrollViewDelegate {
         }
         titlesView.addSubview(indicatorView)
     }
-
+//MARK:- button Action
     func titlesClick(button:UIButton) {
         selectButton?.isEnabled = true
         button.isEnabled = false
@@ -116,6 +126,10 @@ class HomeVC: TXBaseViewController,UIScrollViewDelegate {
             self.indicatorView?.width = (self.selectButton?.width)!
             self.indicatorView?.centerX = (self.selectButton?.centerX)!
         }
+        //滚动,切换子控制器
+        var offset = contentView?.contentOffset
+        offset?.x = CGFloat(button.tag) * (contentView?.width)!
+        contentView?.setContentOffset(offset!, animated: true)
     }
     
     func rightButtonClick() {
@@ -124,6 +138,24 @@ class HomeVC: TXBaseViewController,UIScrollViewDelegate {
     
     func arrowBtnClick(sender:UIButton){
         sender.isSelected = !sender.isSelected
+    }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        let index = Int(scrollView.contentOffset.x/scrollView.width)
+        let vc = childViewControllers[index]
+        vc.view.x = scrollView.contentOffset.x
+        vc.view.y = 0
+        vc.view.height = scrollView.height
+        scrollView.addSubview(vc.view)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrollViewDidEndScrollingAnimation(scrollView)
+        // 当前索引
+        let index = Int(scrollView.contentOffset.x / scrollView.width)
+        // 点击 Button
+        let button = titlesView?.subviews[index]
+        self.titlesClick(button: button as! UIButton)
     }
 
     override func didReceiveMemoryWarning() {

@@ -10,7 +10,6 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SVProgressHUD
-
 class NetworkTool: NSObject {
     ///swift 单行单例
     static let shared = NetworkTool()
@@ -20,6 +19,7 @@ class NetworkTool: NSObject {
         let url = BASE_URL+"v2/channels/preset"
         let params = ["gender": 1,
                       "generation": 1]
+        SVProgressHUD.show()
         Alamofire
             .request(url,parameters:params)
         .responseJSON { (response) in
@@ -28,7 +28,7 @@ class NetworkTool: NSObject {
                 return
             }
             if let value = response.result.value {
-                print(response.result.value as Any)
+                print("url:",response.response?.url as Any,"\n",response.result.value as Any)
                 let dict = JSON(value)
                 let code = dict["code"].intValue
                 let message = dict["message"].stringValue
@@ -57,12 +57,13 @@ class NetworkTool: NSObject {
     ///获取首页数据
     func loadHomeInfo(id: Int , finished:@escaping (_ homeModel:[TXHomeModel]) -> ()) {
         
-        let url = BASE_URL + "channels/\(id)/items"
+        let url = BASE_URL + "/v1/channels/\(id)/items"
         let params = ["gender": 1,
                       "generation": 1,
                       "limit": 20,
                       "offset": 0
                       ]
+        SVProgressHUD.show()
         Alamofire.request( url,
                            parameters: params)
         .responseJSON { (response) in
@@ -70,12 +71,28 @@ class NetworkTool: NSObject {
                 SVProgressHUD.showError(withStatus: "加载失败")
                 return
             }
-            print(response)
+            print("url:",response.response?.url as Any,"\n",response.result.value as Any)
             
-//            if let value = response.result.value {
-//                let dict = value
-//            }
+            if let value = response.result.value {
+                print(response.result.value as Any)
+                let dict = JSON(value)
+                let code = dict["code"].intValue
+                let message = dict["message"].stringValue
+                guard code == RETURN_OK else {
+                    SVProgressHUD.showInfo(withStatus: message)
+                    return
+                }
+                SVProgressHUD.dismiss()
+                let data = dict["data"].dictionary
+                if let items = data?["items"]?.arrayObject {
+                    var tx_itmes = [TXHomeModel]()
+                    for item in items {
+                        let tx_item = TXHomeModel(dict: item as! [String : AnyObject])
+                        tx_itmes.append(tx_item)
+                    }
+                    finished(tx_itmes)
+                }
+            }
         }
-        
     }
 }

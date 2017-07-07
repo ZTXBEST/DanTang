@@ -29,6 +29,7 @@ class TXNavigationController: UINavigationController {
         if viewControllers.count>0 {
             viewController.hidesBottomBarWhenPushed=true;
             viewController.navigationItem.leftBarButtonItem=UIBarButtonItem(image:UIImage(named:"checkUserType_backward_9x15_"),style:.plain,target:self,action:#selector(navigationBackClick))
+            viewController.navigationItem.leftBarButtonItem?.tintColor = UIColor.white
         }
         super.pushViewController(viewController, animated: true)
     }

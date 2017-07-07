@@ -10,6 +10,9 @@
 		271D42F71F0CCD4600E04A82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271D42F61F0CCD4600E04A82 /* Assets.xcassets */; };
 		271D42F91F0CE0C500E04A82 /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271D42F81F0CE0C500E04A82 /* NetworkTool.swift */; };
 		271D42FB1F0CE45800E04A82 /* TXHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271D42FA1F0CE45800E04A82 /* TXHomeModel.swift */; };
+		27352EFE1F0F15AB000BDAE0 /* HomeContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27352EFD1F0F15AB000BDAE0 /* HomeContentVC.swift */; };
+		27352F001F0F1BF1000BDAE0 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27352EFF1F0F1BF1000BDAE0 /* HomeCell.swift */; };
+		27352F021F0F591B000BDAE0 /* TXWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27352F011F0F591B000BDAE0 /* TXWebViewController.swift */; };
 		27DD2DBB1F0DD2FF009659ED /* TXHomeTopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DD2DBA1F0DD2FF009659ED /* TXHomeTopModel.swift */; };
 		27DD2DBD1F0E00FB009659ED /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DD2DBC1F0E00FB009659ED /* UIView+Extension.swift */; };
 		27E00AAD1F0C95E800B010C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E00AAC1F0C95E800B010C4 /* AppDelegate.swift */; };
@@ -52,6 +55,9 @@
 		271D42F61F0CCD4600E04A82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		271D42F81F0CE0C500E04A82 /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
 		271D42FA1F0CE45800E04A82 /* TXHomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXHomeModel.swift; sourceTree = "<group>"; };
+		27352EFD1F0F15AB000BDAE0 /* HomeContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeContentVC.swift; sourceTree = "<group>"; };
+		27352EFF1F0F1BF1000BDAE0 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		27352F011F0F591B000BDAE0 /* TXWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXWebViewController.swift; sourceTree = "<group>"; };
 		27DD2DBA1F0DD2FF009659ED /* TXHomeTopModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXHomeTopModel.swift; sourceTree = "<group>"; };
 		27DD2DBC1F0E00FB009659ED /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		27E00AA91F0C95E800B010C4 /* DanTangSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DanTangSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +179,7 @@
 				27E00AEC1F0CB6B200B010C4 /* TXBaseViewController.swift */,
 				27E00AED1F0CB6B200B010C4 /* TXTabBarController.swift */,
 				27E00B131F0CCBC700B010C4 /* TXNavigationController.swift */,
+				27352F011F0F591B000BDAE0 /* TXWebViewController.swift */,
 			);
 			path = BaseVC;
 			sourceTree = "<group>";
@@ -239,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				27E00B071F0CB80400B010C4 /* HomeVC.swift */,
+				27352EFD1F0F15AB000BDAE0 /* HomeContentVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -255,6 +263,7 @@
 		27E00AFD1F0CB7A000B010C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				27352EFF1F0F1BF1000BDAE0 /* HomeCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -541,7 +550,10 @@
 				27E00B141F0CCBC700B010C4 /* TXNavigationController.swift in Sources */,
 				27DD2DBB1F0DD2FF009659ED /* TXHomeTopModel.swift in Sources */,
 				27E00AF21F0CB6CB00B010C4 /* UIColor+Extension.swift in Sources */,
+				27352EFE1F0F15AB000BDAE0 /* HomeContentVC.swift in Sources */,
 				27E00B0C1F0CB88F00B010C4 /* ProductVC.swift in Sources */,
+				27352F021F0F591B000BDAE0 /* TXWebViewController.swift in Sources */,
+				27352F001F0F1BF1000BDAE0 /* HomeCell.swift in Sources */,
 				27E00AEE1F0CB6B200B010C4 /* TXBaseViewController.swift in Sources */,
 				27E00B0E1F0CB8DD00B010C4 /* ClassifyVC.swift in Sources */,
 				27E00AF51F0CB6D600B010C4 /* TXConst.swift in Sources */,

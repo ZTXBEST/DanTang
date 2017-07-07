@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import SnapKit
+import Kingfisher
+import SVProgressHUD
 
 /// 顶部标题的高度
 let kTitlesViewH: CGFloat = 35
