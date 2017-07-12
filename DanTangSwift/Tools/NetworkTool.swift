@@ -95,4 +95,53 @@ class NetworkTool: NSObject {
             }
         }
     }
+    
+    //获取单品页数据
+    func loadProductData(finished:@escaping (_ productModel:[TXProductModel]) -> ()) {
+        let url = BASE_URL + "v2/items"
+        let params = ["gender": 1,
+                      "generation": 1,
+                      "limit": 20,
+                      "offset": 0]
+        SVProgressHUD.show()
+        Alamofire
+            .request(url,parameters:params)
+            .responseJSON { (response) in
+                
+                guard response.result.isSuccess else {
+                    SVProgressHUD.showError(withStatus: "加载失败")
+                    return
+                }
+                print("url:",response.response?.url as Any,"\n",response.result.value as Any)
+                
+                if let value = response.result.value {
+                    print(response.result.value as Any)
+                    let dict = JSON(value)
+                    let code = dict["code"].intValue
+                    let message = dict["message"].stringValue
+                    guard code == RETURN_OK else {
+                        SVProgressHUD.showInfo(withStatus: message)
+                        return
+                    }
+                    
+                    SVProgressHUD.dismiss()
+                    let data = dict["data"].dictionary
+                    if let items = data?["items"]?.arrayObject {
+                        var products = [TXProductModel]()
+                        for item in items {
+                            let itemDict = item as! [String : AnyObject]
+                            if let itemData = itemDict["data"] {
+                                let product = TXProductModel(dict: itemData as! [String: AnyObject])
+                                products.append(product)
+                            }
+                        }
+                        finished(products)
+                    }
+                }
+        }
+        
+    }
+    
+    
+    
 }

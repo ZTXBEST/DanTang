@@ -20,14 +20,15 @@ class TXTabBarController: UITabBarController {
 
     private func addChildViewControllers() {
         addChildViewController(childController: HomeVC(), title: "单糖", imaged: "TabBar_home_23x23_")
-        addChildViewController(childController: HomeVC(), title: "单品", imaged: "TabBar_gift_23x23_")
-        addChildViewController(childController: HomeVC(), title: "分类", imaged: "TabBar_category_23x23_")
-        addChildViewController(childController: HomeVC(), title: "我的", imaged: "TabBar_me_boy_23x23_")
+        addChildViewController(childController: ProductVC(), title: "单品", imaged: "TabBar_gift_23x23_")
+        addChildViewController(childController: ClassifyVC(), title: "分类", imaged: "TabBar_category_23x23_")
+        addChildViewController(childController: MineVC(), title: "我的", imaged: "TabBar_me_boy_23x23_")
     }
     
     private func addChildViewController(childController:UIViewController,title:String,imaged:String) {
-        childController.tabBarItem.title=title;
-        childController.tabBarItem.image=UIImage(named:imaged);
+//        childController.tabBarItem.title=title
+        childController.title = title
+        childController.tabBarItem.image=UIImage(named:imaged)
         childController.tabBarItem.selectedImage=UIImage(named:imaged+"selected")
         let nav=TXNavigationController(rootViewController: childController)
         addChildViewController(nav)

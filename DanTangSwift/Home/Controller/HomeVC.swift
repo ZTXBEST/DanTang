@@ -20,7 +20,6 @@ class HomeVC: TXBaseViewController,UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "单糖"
         initNav()
         requestData()
         // Do any additional setup after loading the view.

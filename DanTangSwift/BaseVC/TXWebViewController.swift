@@ -10,14 +10,15 @@ import UIKit
 import SVProgressHUD
 
 class TXWebViewController: TXBaseViewController ,UIWebViewDelegate{
-    
+    var webView = UIWebView()
     var url = String()
     var titleString = String()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let webView = UIWebView()
+        
+        self.configToolBar()
+        webView = UIWebView()
         webView.frame = view.bounds
         webView.scalesPageToFit = true
         webView.dataDetectorTypes = .all
@@ -26,6 +27,19 @@ class TXWebViewController: TXBaseViewController ,UIWebViewDelegate{
         webView.delegate = self
         view.addSubview(webView)
     }
+    
+    func configToolBar() {
+        let backItem = UIBarButtonItem(image: UIImage(named:"checkUserType_backward_9x15_"), style: .plain, target: self, action: #selector(backButtonClick))
+        
+        let flexItem0 = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        
+        let forwardItem = UIBarButtonItem(image: UIImage(named: "Category_PostCollectionSeeAll_nightMode_5x8_"), style: .plain, target: nil, action: nil)
+    
+        let flexItem1 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+      self.setToolbarItems([backItem,flexItem0,forwardItem,flexItem1], animated: true)
+    }
+    // MARK:-- webview的方法
     func webViewDidStartLoad(_ webView: UIWebView) {
         SVProgressHUD.showInfo(withStatus: "正在加载中...")
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -42,5 +56,12 @@ class TXWebViewController: TXBaseViewController ,UIWebViewDelegate{
     
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         SVProgressHUD.showError(withStatus: error.localizedDescription)
+    }
+    
+    //MARK:-- button Action
+    @objc private func backButtonClick() {
+        if (self.webView.canGoBack) {
+            self.webView.goBack()
+        }
     }
 }
