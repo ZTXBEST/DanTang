@@ -142,6 +142,37 @@ class NetworkTool: NSObject {
         
     }
     
-    
+    func loadProductDetailData(id: Int , finished:@escaping (_ productDetailModel:TXProductDetailModel)->()) {
+        let url = BASE_URL + "v2/items/\(id)"
+        SVProgressHUD.show(withStatus: "正在加载中...")
+        Alamofire
+            .request(url)
+            .responseJSON { (response) in
+                guard response.result.isSuccess else {
+                    SVProgressHUD.showError(withStatus: "加载失败")
+                    return
+                }
+                print("url:",response.response?.url as Any,"\n",response.result.value as Any)
+                
+                
+                if let value = response.result.value {
+                    print(response.result.value as Any)
+                    let dict = JSON(value)
+                    let code = dict["code"].intValue
+                    let message = dict["message"].stringValue
+                    guard code == RETURN_OK else {
+                        SVProgressHUD.showInfo(withStatus: message)
+                        return
+                    }
+                    
+                    SVProgressHUD.dismiss()
+                    if let data = dict["data"].dictionaryObject {
+                        let productDetail = TXProductDetailModel(dict: data as [String : AnyObject])
+                        finished(productDetail)
+                    }
+                }
+                
+        }
+    }
     
 }

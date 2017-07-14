@@ -60,7 +60,10 @@ class ProductVC: TXBaseViewController,UICollectionViewDelegate,UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        
+        let model = datas[indexPath.row]
+        let vc = ProductDetailVC()
+        vc.id_ = model.id!
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

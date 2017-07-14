@@ -8,12 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		2706E0831F14C652009835DE /* TXProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706E0821F14C652009835DE /* TXProductModel.swift */; };
+		270885D71F17472500784FE6 /* ProductDetailScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270885D61F17472500784FE6 /* ProductDetailScrollView.swift */; };
 		271D42F71F0CCD4600E04A82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271D42F61F0CCD4600E04A82 /* Assets.xcassets */; };
 		271D42F91F0CE0C500E04A82 /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271D42F81F0CE0C500E04A82 /* NetworkTool.swift */; };
 		271D42FB1F0CE45800E04A82 /* TXHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271D42FA1F0CE45800E04A82 /* TXHomeModel.swift */; };
+		27245C9A1F188EB1003D9770 /* TXBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27245C941F188EB1003D9770 /* TXBaseViewController.swift */; };
+		27245C9B1F188EB1003D9770 /* TXNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27245C951F188EB1003D9770 /* TXNavigationController.swift */; };
+		27245C9C1F188EB1003D9770 /* TXTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27245C961F188EB1003D9770 /* TXTabBarController.swift */; };
+		27245C9D1F188EB1003D9770 /* TXWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27245C971F188EB1003D9770 /* TXWebViewController.swift */; };
+		27245C9F1F188EDE003D9770 /* UISegmentControllExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27245C9E1F188EDE003D9770 /* UISegmentControllExt.swift */; };
+		27245CA11F18A9AE003D9770 /* TXActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27245CA01F18A9AE003D9770 /* TXActionSheet.swift */; };
+		27245CA31F18B2CC003D9770 /* TXShareButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27245CA21F18B2CC003D9770 /* TXShareButtonView.swift */; };
+		27245CA51F18B3FB003D9770 /* TXVerticalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27245CA41F18B3FB003D9770 /* TXVerticalButton.swift */; };
 		27352EFE1F0F15AB000BDAE0 /* HomeContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27352EFD1F0F15AB000BDAE0 /* HomeContentVC.swift */; };
 		27352F001F0F1BF1000BDAE0 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27352EFF1F0F1BF1000BDAE0 /* HomeCell.swift */; };
-		27352F021F0F591B000BDAE0 /* TXWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27352F011F0F591B000BDAE0 /* TXWebViewController.swift */; };
+		273CFFC41F17092D005FA947 /* TXProductDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273CFFC31F17092D005FA947 /* TXProductDetailModel.swift */; };
 		27544CF31F14A90000D046CF /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27544CF21F14A90000D046CF /* ProductCell.swift */; };
 		276A83621F15B59B009B04A4 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276A83611F15B59B009B04A4 /* ProductDetailVC.swift */; };
 		27DD2DBB1F0DD2FF009659ED /* TXHomeTopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DD2DBA1F0DD2FF009659ED /* TXHomeTopModel.swift */; };
@@ -24,15 +33,12 @@
 		27E00AB71F0C95E800B010C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E00AB51F0C95E800B010C4 /* LaunchScreen.storyboard */; };
 		27E00AC21F0C95E800B010C4 /* DanTangSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E00AC11F0C95E800B010C4 /* DanTangSwiftTests.swift */; };
 		27E00ACD1F0C95E800B010C4 /* DanTangSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E00ACC1F0C95E800B010C4 /* DanTangSwiftUITests.swift */; };
-		27E00AEE1F0CB6B200B010C4 /* TXBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E00AEC1F0CB6B200B010C4 /* TXBaseViewController.swift */; };
-		27E00AEF1F0CB6B200B010C4 /* TXTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E00AED1F0CB6B200B010C4 /* TXTabBarController.swift */; };
 		27E00AF21F0CB6CB00B010C4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E00AF11F0CB6CB00B010C4 /* UIColor+Extension.swift */; };
 		27E00AF51F0CB6D600B010C4 /* TXConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E00AF41F0CB6D600B010C4 /* TXConst.swift */; };
 		27E00B081F0CB80400B010C4 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E00B071F0CB80400B010C4 /* HomeVC.swift */; };
 		27E00B0A1F0CB84E00B010C4 /* MineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E00B091F0CB84E00B010C4 /* MineVC.swift */; };
 		27E00B0C1F0CB88F00B010C4 /* ProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E00B0B1F0CB88F00B010C4 /* ProductVC.swift */; };
 		27E00B0E1F0CB8DD00B010C4 /* ClassifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E00B0D1F0CB8DD00B010C4 /* ClassifyVC.swift */; };
-		27E00B141F0CCBC700B010C4 /* TXNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E00B131F0CCBC700B010C4 /* TXNavigationController.swift */; };
 		9F113184B7313CA5B8F61E14 /* Pods_DanTangSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3258C960B4FB24AB8B50A3F5 /* Pods_DanTangSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,12 +62,21 @@
 /* Begin PBXFileReference section */
 		022002614A328256DCA5494F /* Pods-DanTangSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanTangSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-DanTangSwift/Pods-DanTangSwift.release.xcconfig"; sourceTree = "<group>"; };
 		2706E0821F14C652009835DE /* TXProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXProductModel.swift; sourceTree = "<group>"; };
+		270885D61F17472500784FE6 /* ProductDetailScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailScrollView.swift; sourceTree = "<group>"; };
 		271D42F61F0CCD4600E04A82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		271D42F81F0CE0C500E04A82 /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
 		271D42FA1F0CE45800E04A82 /* TXHomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXHomeModel.swift; sourceTree = "<group>"; };
+		27245C941F188EB1003D9770 /* TXBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXBaseViewController.swift; sourceTree = "<group>"; };
+		27245C951F188EB1003D9770 /* TXNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXNavigationController.swift; sourceTree = "<group>"; };
+		27245C961F188EB1003D9770 /* TXTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXTabBarController.swift; sourceTree = "<group>"; };
+		27245C971F188EB1003D9770 /* TXWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXWebViewController.swift; sourceTree = "<group>"; };
+		27245C9E1F188EDE003D9770 /* UISegmentControllExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISegmentControllExt.swift; sourceTree = "<group>"; };
+		27245CA01F18A9AE003D9770 /* TXActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXActionSheet.swift; sourceTree = "<group>"; };
+		27245CA21F18B2CC003D9770 /* TXShareButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXShareButtonView.swift; sourceTree = "<group>"; };
+		27245CA41F18B3FB003D9770 /* TXVerticalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXVerticalButton.swift; sourceTree = "<group>"; };
 		27352EFD1F0F15AB000BDAE0 /* HomeContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeContentVC.swift; sourceTree = "<group>"; };
 		27352EFF1F0F1BF1000BDAE0 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
-		27352F011F0F591B000BDAE0 /* TXWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXWebViewController.swift; sourceTree = "<group>"; };
+		273CFFC31F17092D005FA947 /* TXProductDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXProductDetailModel.swift; sourceTree = "<group>"; };
 		27544CF21F14A90000D046CF /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		276A83611F15B59B009B04A4 /* ProductDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
 		27DD2DBA1F0DD2FF009659ED /* TXHomeTopModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXHomeTopModel.swift; sourceTree = "<group>"; };
@@ -78,8 +93,6 @@
 		27E00AC81F0C95E800B010C4 /* DanTangSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DanTangSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E00ACC1F0C95E800B010C4 /* DanTangSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanTangSwiftUITests.swift; sourceTree = "<group>"; };
 		27E00ACE1F0C95E800B010C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27E00AEC1F0CB6B200B010C4 /* TXBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXBaseViewController.swift; sourceTree = "<group>"; };
-		27E00AED1F0CB6B200B010C4 /* TXTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXTabBarController.swift; sourceTree = "<group>"; };
 		27E00AF11F0CB6CB00B010C4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		27E00AF41F0CB6D600B010C4 /* TXConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXConst.swift; sourceTree = "<group>"; };
 		27E00B071F0CB80400B010C4 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -87,7 +100,6 @@
 		27E00B0B1F0CB88F00B010C4 /* ProductVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductVC.swift; sourceTree = "<group>"; };
 		27E00B0D1F0CB8DD00B010C4 /* ClassifyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifyVC.swift; sourceTree = "<group>"; };
 		27E00B121F0CC60800B010C4 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		27E00B131F0CCBC700B010C4 /* TXNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TXNavigationController.swift; sourceTree = "<group>"; };
 		3258C960B4FB24AB8B50A3F5 /* Pods_DanTangSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DanTangSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30C285183F7DBA2B7149FD9 /* Pods-DanTangSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanTangSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DanTangSwift/Pods-DanTangSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +130,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27245C931F188EB1003D9770 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				27245C941F188EB1003D9770 /* TXBaseViewController.swift */,
+				27245C951F188EB1003D9770 /* TXNavigationController.swift */,
+				27245C961F188EB1003D9770 /* TXTabBarController.swift */,
+				27245C971F188EB1003D9770 /* TXWebViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		27245C981F188EB1003D9770 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		27245C991F188EB1003D9770 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				27245C9E1F188EDE003D9770 /* UISegmentControllExt.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		27E00AA01F0C95E800B010C4 = {
 			isa = PBXGroup;
 			children = (
@@ -149,7 +187,7 @@
 				27E00AF71F0CB75D00B010C4 /* Classify */,
 				27E00AF31F0CB6D600B010C4 /* Tools */,
 				27E00AF01F0CB6CB00B010C4 /* Extension */,
-				27E00AEB1F0CB67300B010C4 /* BaseVC */,
+				27E00AEB1F0CB67300B010C4 /* Base */,
 				27E00AAC1F0C95E800B010C4 /* AppDelegate.swift */,
 				27E00AAE1F0C95E800B010C4 /* ViewController.swift */,
 				27E00AB01F0C95E800B010C4 /* Main.storyboard */,
@@ -179,14 +217,14 @@
 			path = DanTangSwiftUITests;
 			sourceTree = "<group>";
 		};
-		27E00AEB1F0CB67300B010C4 /* BaseVC */ = {
+		27E00AEB1F0CB67300B010C4 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				27E00AEC1F0CB6B200B010C4 /* TXBaseViewController.swift */,
-				27E00AED1F0CB6B200B010C4 /* TXTabBarController.swift */,
-				27E00B131F0CCBC700B010C4 /* TXNavigationController.swift */,
-				27352F011F0F591B000BDAE0 /* TXWebViewController.swift */,
+				27245C931F188EB1003D9770 /* Controller */,
+				27245C981F188EB1003D9770 /* Model */,
+				27245C991F188EB1003D9770 /* View */,
 			);
+			name = Base;
 			path = BaseVC;
 			sourceTree = "<group>";
 		};
@@ -309,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				2706E0821F14C652009835DE /* TXProductModel.swift */,
+				273CFFC31F17092D005FA947 /* TXProductDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -317,6 +356,10 @@
 			isa = PBXGroup;
 			children = (
 				27544CF21F14A90000D046CF /* ProductCell.swift */,
+				270885D61F17472500784FE6 /* ProductDetailScrollView.swift */,
+				27245CA01F18A9AE003D9770 /* TXActionSheet.swift */,
+				27245CA21F18B2CC003D9770 /* TXShareButtonView.swift */,
+				27245CA41F18B3FB003D9770 /* TXVerticalButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -549,25 +592,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				27E00AAF1F0C95E800B010C4 /* ViewController.swift in Sources */,
+				27245CA11F18A9AE003D9770 /* TXActionSheet.swift in Sources */,
+				27245C9D1F188EB1003D9770 /* TXWebViewController.swift in Sources */,
+				27245CA51F18B3FB003D9770 /* TXVerticalButton.swift in Sources */,
 				27E00B0A1F0CB84E00B010C4 /* MineVC.swift in Sources */,
+				27245CA31F18B2CC003D9770 /* TXShareButtonView.swift in Sources */,
 				27E00B081F0CB80400B010C4 /* HomeVC.swift in Sources */,
+				27245C9F1F188EDE003D9770 /* UISegmentControllExt.swift in Sources */,
+				270885D71F17472500784FE6 /* ProductDetailScrollView.swift in Sources */,
 				27DD2DBD1F0E00FB009659ED /* UIView+Extension.swift in Sources */,
-				27E00AEF1F0CB6B200B010C4 /* TXTabBarController.swift in Sources */,
 				271D42F91F0CE0C500E04A82 /* NetworkTool.swift in Sources */,
 				27E00AAD1F0C95E800B010C4 /* AppDelegate.swift in Sources */,
+				27245C9A1F188EB1003D9770 /* TXBaseViewController.swift in Sources */,
 				271D42FB1F0CE45800E04A82 /* TXHomeModel.swift in Sources */,
-				27E00B141F0CCBC700B010C4 /* TXNavigationController.swift in Sources */,
 				27DD2DBB1F0DD2FF009659ED /* TXHomeTopModel.swift in Sources */,
 				27E00AF21F0CB6CB00B010C4 /* UIColor+Extension.swift in Sources */,
+				27245C9C1F188EB1003D9770 /* TXTabBarController.swift in Sources */,
 				27352EFE1F0F15AB000BDAE0 /* HomeContentVC.swift in Sources */,
 				27E00B0C1F0CB88F00B010C4 /* ProductVC.swift in Sources */,
 				276A83621F15B59B009B04A4 /* ProductDetailVC.swift in Sources */,
 				2706E0831F14C652009835DE /* TXProductModel.swift in Sources */,
-				27352F021F0F591B000BDAE0 /* TXWebViewController.swift in Sources */,
+				27245C9B1F188EB1003D9770 /* TXNavigationController.swift in Sources */,
 				27352F001F0F1BF1000BDAE0 /* HomeCell.swift in Sources */,
 				27544CF31F14A90000D046CF /* ProductCell.swift in Sources */,
-				27E00AEE1F0CB6B200B010C4 /* TXBaseViewController.swift in Sources */,
 				27E00B0E1F0CB8DD00B010C4 /* ClassifyVC.swift in Sources */,
+				273CFFC41F17092D005FA947 /* TXProductDetailModel.swift in Sources */,
 				27E00AF51F0CB6D600B010C4 /* TXConst.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
