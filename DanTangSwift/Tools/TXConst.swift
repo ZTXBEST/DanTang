@@ -10,8 +10,6 @@ import UIKit
 import SnapKit
 import Kingfisher
 import SVProgressHUD
-
-
 enum TXShareButtonType: Int {
     /// 微信朋友圈
     case WeChatTimeline = 0
@@ -27,10 +25,20 @@ enum TXShareButtonType: Int {
     case CopyLink = 5
 }
 
+enum ClassifyContentVCType {
+    //专题合集
+    case ClassifyProject
+    //风格、品类
+    case ClassifyOthers
+}
+
 /// 顶部标题的高度
 let kTitlesViewH: CGFloat = 35
 /// 顶部标题的y
 let kTitlesViewY: CGFloat = 64
+
+let Application = UIApplication.shared.delegate as! AppDelegate
+
 
 /// 屏幕的宽
 let KScreenWidth = UIScreen.main.bounds.size.width

@@ -39,6 +39,7 @@ class TXShareButtonView: UIView {
             button.tag = index
             button.setImage(UIImage(named: images[index]), for: .normal)
             button.setTitle(titles[index], for: .normal)
+            
             button.setTitleColor(UIColor.black, for: .normal)
             button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
             button.width = buttonW
@@ -52,7 +53,6 @@ class TXShareButtonView: UIView {
             let buttonMaxY: CGFloat = CGFloat(row) * buttonH
             let buttonY = buttonMaxY
             button.frame = CGRect(x: buttonX, y: buttonY, width: buttonW, height: buttonH)
-            
             addSubview(button)
         }
     }

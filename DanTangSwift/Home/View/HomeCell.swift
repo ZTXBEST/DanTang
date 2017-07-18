@@ -35,7 +35,6 @@ class HomeCell: UITableViewCell {
         bgImageView = UIImageView(frame: CGRect(x: 10, y: 10, width: KScreenWidth-20, height: 160-20))
         bgImageView.layer.cornerRadius = 5.0
         bgImageView.layer.masksToBounds = true
-        bgImageView.backgroundColor = UIColor.red
         self.contentView.addSubview(bgImageView)
         
         titleLabel = UILabel()

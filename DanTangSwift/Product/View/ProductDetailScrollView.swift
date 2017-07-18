@@ -20,6 +20,7 @@ class ProductDetailScrollView: UIView,UIScrollViewDelegate {
     
     var model : TXProductDetailModel? {
         didSet {
+            self.timer?.fireDate = NSDate.distantPast
             data = model?.image_urls!
             titleLabel.text = model?.name
             priceLabel.text = model?.price
