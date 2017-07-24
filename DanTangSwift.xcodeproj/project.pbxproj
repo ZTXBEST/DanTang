@@ -840,6 +840,7 @@
 			baseConfigurationReference = A30C285183F7DBA2B7149FD9 /* Pods-DanTangSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 25ED8G2BTH;
 				GCC_PREFIX_HEADER = /Users/apple/Desktop/DanTang/DanTangSwiftTests/PrefixHeader.pch;
 				INFOPLIST_FILE = DanTangSwift/Info.plist;
@@ -855,6 +856,7 @@
 			baseConfigurationReference = 022002614A328256DCA5494F /* Pods-DanTangSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 25ED8G2BTH;
 				GCC_PREFIX_HEADER = /Users/apple/Desktop/DanTang/DanTangSwiftTests/PrefixHeader.pch;
 				INFOPLIST_FILE = DanTangSwift/Info.plist;
